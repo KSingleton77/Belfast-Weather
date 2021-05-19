@@ -1,0 +1,13 @@
+﻿@model ResultViewModel;
+<div class="text-left">
+  <h4>Weather Forecast for the next 5 days for @Model.Title</h4>
+  @foreach (var forecast in Model.Consolidated_weather)
+  {
+    <div>
+      <h4>@forecast.Applicable_date</h4>
+      <div>Temperature: @forecast.The_temp.ToString("0")ºC    Min: @forecast.Min_temp.ToString("0")ºC   Max: @forecast.Max_temp.ToString("0")ºC</div>
+      <div>@forecast.Weather_state_name</div>
+      <img src="https://www.metaweather.com/static/img/weather/@(forecast.Weather_state_abbr).svg" style="width:32px" />
+      <hr />
+    </div>}
+</div>
